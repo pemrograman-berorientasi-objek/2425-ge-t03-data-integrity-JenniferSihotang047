@@ -1,8 +1,8 @@
 package academic.model;
 
 /**
- * @author 12S23040 Diana Manurung
- * @author 12S23047 Jennifer Sihotang
+ * @autors 12S23040 Diana Manurung
+ * @autors 12S23047 Jennifer Sihotang
  */
 
 public class Student {
@@ -18,15 +18,19 @@ public class Student {
         this.prodi = _prodi;
     }
 
+    public String getNim() {
+        return this.nim;
+    }
+
     public String getName() {
         return this.name;
     }
 
-    public int getakt() {
+    public int getAkt() {
         return this.akt;
     }
 
-    public String getprodi() {
+    public String getProdi() {
         return this.prodi;
     }
 

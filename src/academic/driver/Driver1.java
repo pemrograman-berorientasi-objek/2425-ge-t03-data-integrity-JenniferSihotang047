@@ -1,8 +1,8 @@
 package academic.driver;
 
 /**
- * @author 12S23040 Diana Manurung
- * @author 12S23047 Jennifer Sihotang
+ * @autors 12S23040 Diana Manurung
+ * @autors 12S23047 Jennifer Sihotang
  */
 
 import academic.model.Course;
@@ -32,21 +32,32 @@ public class Driver1 {
 
             switch (command) {
                 case "course-add":
-                    boolean isDuplicateCourse = courses.stream().anyMatch(c -> c.toString().equals(input));
+                    boolean isDuplicateCourse = courses.stream().anyMatch(c -> c.getId().equals(segments[1]));
                     if (!isDuplicateCourse) {
                         courses.add(new Course(segments[1], segments[2], Integer.parseInt(segments[3]), segments[4]));
                     }
                     break;
                 case "student-add":
-                    boolean isDuplicateStudent = students.stream().anyMatch(s -> s.toString().equals(input));
+                    boolean isDuplicateStudent = students.stream().anyMatch(s -> s.getNim().equals(segments[1]));
                     if (!isDuplicateStudent) {
                         students.add(new Student(segments[1], segments[2], Integer.parseInt(segments[3]), segments[4]));
                     }
                     break;
                 case "enrollment-add":
-                    boolean isDuplicateEnrollment = enrollments.stream().anyMatch(e -> e.toString().equals(input));
-                    if (!isDuplicateEnrollment) {
-                        enrollments.add(new Enrollment(segments[1], segments[2], segments[3], segments[4]));
+                    Course course = courses.stream().filter(c -> c.getId().equals(segments[1])).findFirst().orElse(null);
+                    Student student = students.stream().filter(s -> s.getNim().equals(segments[2])).findFirst().orElse(null);
+                    if (course != null && student != null) {
+                        boolean isDuplicateEnrollment = enrollments.stream().anyMatch(e -> e.toString().equals(course.getId() + "|" + student.getNim() + "|" + segments[3] + "|" + segments[4] + "|None"));
+                        if (!isDuplicateEnrollment) {
+                            enrollments.add(new Enrollment(course, student, segments[3], segments[4]));
+                        }
+                    } else {
+                        if (course == null) {
+                            System.out.println("invalid course|" + segments[1]);
+                        }
+                        if (student == null) {
+                            System.out.println("invalid student|" + segments[2]);
+                        }
                     }
                     break;
             }
