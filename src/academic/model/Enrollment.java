@@ -1,38 +1,43 @@
 package academic.model;
 
+/**
+ * @author 12S23040 Diana Manurung
+ * @author 12S23047 Jennifer Sihotang
+ */
+
 public class Enrollment {
-    private Course course;
-    private Student student;
-    private String year;
+    private String id;
+    private String nim;
+    private String akt;
     private String semester;
     private String grade;
 
-    public Enrollment(Course course, Student student, String year, String semester) {
-        this.course = course;
-        this.student = student;
-        this.year = year;
+    public Enrollment(String id, String nim, String akt, String semester) {
+        this.id = id;
+        this.nim = nim;
+        this.akt = akt;
         this.semester = semester;
-        this.grade = "None";
+        this.grade = "None"; 
     }
 
-    public Course getCourse() {
-        return course;
+    public String getId() {
+        return this.id;
     }
 
-    public Student getStudent() {
-        return student;
+    public String getNim() {
+        return this.nim;
     }
 
-    public String getYear() {
-        return year;
+    public String getAkt() {
+        return this.akt;
     }
 
     public String getSemester() {
-        return semester;
+        return this.semester;
     }
 
-    @Override
-    public String toString() {
-        return course.getId() + "|" + student.getNim() + "|" + year + "|" + semester + "|" + grade;
+    public String getGrade() {
+        return this.grade;
     }
+
 }
