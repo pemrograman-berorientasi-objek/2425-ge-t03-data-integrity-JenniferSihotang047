@@ -33,4 +33,9 @@ public class Student {
     public String getprodi() {
         return this.prodi;
     }
+
+    @Override
+    public String toString(){
+        return nim + "|" + name + "|" + akt + "|" + prodi;
+    }
 }

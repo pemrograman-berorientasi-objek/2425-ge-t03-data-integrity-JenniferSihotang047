@@ -33,5 +33,10 @@ public class Course {
     public String getgrade() {
         return this.grade;
     }
+    
+    @Override
+    public String toString() {
+        return id + "|" + course_name + "|" + sks + "|" + grade;
+    }  
 
 }
