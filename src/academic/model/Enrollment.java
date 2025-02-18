@@ -1,10 +1,5 @@
 package academic.model;
 
-/**
- * @autors 12S23040 Diana Manurung
- * @autors 12S23047 Jennifer Sihotang
- */
-
 public class Enrollment {
     private Course course;
     private Student student;
@@ -17,11 +12,23 @@ public class Enrollment {
         this.student = student;
         this.year = year;
         this.semester = semester;
-        this.grade = "None"; 
+        this.grade = "None";
     }
 
-    public String getGrade() {
-        return this.grade;
+    public Course getCourse() {
+        return course;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public String getSemester() {
+        return semester;
     }
 
     @Override
