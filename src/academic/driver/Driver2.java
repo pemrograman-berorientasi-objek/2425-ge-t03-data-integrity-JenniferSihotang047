@@ -1,5 +1,10 @@
 package academic.driver;
 
+/**
+ * @author 12S23040 Diana Manurung
+ * @author 12S23047 Jennifer Sihotang
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

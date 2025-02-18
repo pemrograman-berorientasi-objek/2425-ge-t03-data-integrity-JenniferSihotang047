@@ -1,8 +1,8 @@
 package academic.driver;
 
 /**
- * @author 12S22011 Wilson Eksaudi Sihombing
- * @author NIM Nama
+ * @author 12S23040 Diana Manurung
+ * @author 12S23047 Jennifer Sihotang
  */
 
 import academic.model.Course;
