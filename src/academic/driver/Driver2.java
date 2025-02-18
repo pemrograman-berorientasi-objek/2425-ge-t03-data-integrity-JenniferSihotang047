@@ -63,15 +63,9 @@ public class Driver2 {
             }
         }
 
-        for (Course course : courses) {
-            System.out.println(course);
-        }
-        for (Student student : students) {
-            System.out.println(student);
-        }
-        for (Enrollment enrollment : enrollments) {
-            System.out.println(enrollment);
-        }
+        courses.stream().sorted((c1, c2) -> c1.getId().compareTo(c2.getId())).forEach(System.out::println);
+        students.stream().sorted((s1, s2) -> s1.getNim().compareTo(s2.getNim())).forEach(System.out::println);
+        enrollments.stream().sorted((e1, e2) -> e1.toString().compareTo(e2.toString())).forEach(System.out::println);
 
         scanner.close();
     }
