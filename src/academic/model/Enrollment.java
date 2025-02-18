@@ -40,9 +40,4 @@ public class Enrollment {
         return this.grade;
     }
 
-    @Override
-    public String toString() {
-        return id + "|" + nim + "|" + akt + "|" + semester + "|" + grade;
-    }
-    
 }
